@@ -1,0 +1,75 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <f:if condition="{data_tx_altaahisogal_menukey}">
+        <div class="altaahhelp{data.uid} portfolio-menu pt-2 mb-4">
+        <ul>
+            <f:for each="{data_tx_altaahisogal_menukey}" as="data_item" iteration="iterator">   
+                    <f:if condition="{data_item.data.tx_altaahisogal_buttonkey}">                      
+                        <li class="btn isobtn-outline-dark {f:if(condition:iterator.isFirst, then: 'active')}" data-filter="{f:if(condition: '{data_item.data.tx_altaahisogal_isobuttontag} == *', then: '*', else: '.{data_item.data.tx_altaahisogal_isobuttontag}')}">
+                            {data_item.data.tx_altaahisogal_buttonkey}
+                        </li>
+                    </f:if>
+                
+            </f:for>
+        </ul>
+        </div>
+    </f:if>
+    
+    <f:if condition="{data_tx_altaahisogal_isoimgkey}">
+        <div class="altaahhelpitem{data.uid} portfolio-item row">
+            <f:for each="{data_tx_altaahisogal_isoimgkey}" as="data_item">
+                <div class="item  <f:if condition='{data_item.data.tx_altaahisogal_isotag}'>{data_item.data.tx_altaahisogal_isotag}</f:if> col-lg-3 col-md-4 col-6 col-sm">
+                    
+                    <f:for each="{data_item.data_tx_altaahisogal_isoup}" as="file">                                          
+                       <a href="../fileadmin{file.identifier}" class="altaahhelppopup-btn{data.uid} fancylight popup-btn" data-fancybox-group="light">
+                           <div class="isocont">
+                              <f:image image="{file}" additionalAttributes="{caption: '{file.description}'}" class="img-fluid" alt="{file.alternative}" title="{file.title}" />
+                              <div class="isooverlay">
+                                <div class="isotext">{file.title}</div>
+                              </div>
+                           </div>
+                       </a>                       
+                    </f:for>
+    
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+ 
+<f:asset.script identifier="{data.uid}">
+
+    $('.altaahhelp{data.uid} ul li').click(function () {
+        $('.altaahhelp{data.uid} ul li').removeClass('active');
+        $(this).addClass('active');
+    
+        var selector = $(this).attr('data-filter');
+        $('.altaahhelpitem{data.uid}').isotope({
+            filter: selector
+        });
+        return false;
+    });
+    
+    $(document).ready(function () {
+        var popup_btn = $('.altaahhelppopup-btn{data.uid}');
+        popup_btn.magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true
+            },
+           image: {
+               titleSrc: function(item) {
+                  return item.el.find('img').attr('caption');
+               }
+           }
+        });
+    });
+
+</f:asset.script>
+
+</f:section>
+
+</html>
+
+

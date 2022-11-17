@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2022-10-13T19:27:31+02:00" product-name="altaahisogal">
+    <header/>
+    <body>
+      <trans-unit id="wizards.newContentElement.isotestkey_title">
+        <source>isogallery</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.isotestkey_description">
+        <source>A simple isogallery</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

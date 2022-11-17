@@ -1,0 +1,216 @@
+{
+    "tt_content": {
+        "elements": {
+            "isotestkey": {
+                "color": "#000000",
+                "colorOverlay": "#000000",
+                "columns": [
+                    "tx_mask_menukey",
+                    "tx_mask_isoimgkey"
+                ],
+                "description": "A simple isogallery",
+                "descriptions": [
+                    "",
+                    ""
+                ],
+                "icon": "fa-balance-scale",
+                "iconOverlay": "",
+                "key": "isotestkey",
+                "label": "isogallery",
+                "labels": [
+                    "menu",
+                    "Images"
+                ],
+                "shortLabel": "Iso",
+                "sorting": 0
+            }
+        },
+        "palettes": {
+            "tx_mask_2590b2d82096d8": {
+                "description": "",
+                "label": "pallettetest",
+                "showitem": [
+                    "subheader"
+                ]
+            }
+        },
+        "sql": {
+            "tx_mask_isoimgkey": {
+                "tt_content": {
+                    "tx_mask_isoimgkey": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_menukey": {
+                "tt_content": {
+                    "tx_mask_menukey": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_isoimgkey": {
+                "config": {
+                    "appearance": {
+                        "enabledControls": {
+                            "delete": 1,
+                            "dragdrop": 1,
+                            "hide": 1,
+                            "info": 1,
+                            "localize": 1,
+                            "new": 1,
+                            "sort": 1
+                        },
+                        "levelLinksPosition": "bottom",
+                        "showAllLocalizationLink": 1,
+                        "showNewRecordLink": 1,
+                        "showPossibleLocalizationRecords": 1,
+                        "useSortable": 1
+                    },
+                    "foreign_field": "parentid",
+                    "foreign_sortby": "sorting",
+                    "foreign_table": "--inlinetable--",
+                    "foreign_table_field": "parenttable",
+                    "type": "inline"
+                },
+                "fullKey": "tx_mask_isoimgkey",
+                "key": "isoimgkey",
+                "type": "inline"
+            },
+            "tx_mask_menukey": {
+                "config": {
+                    "appearance": {
+                        "collapseAll": "1",
+                        "enabledControls": {
+                            "delete": 1,
+                            "dragdrop": 1,
+                            "hide": 1,
+                            "info": 1,
+                            "localize": 1,
+                            "new": 1,
+                            "sort": 1
+                        },
+                        "levelLinksPosition": "bottom",
+                        "showAllLocalizationLink": 1,
+                        "showNewRecordLink": 1,
+                        "showPossibleLocalizationRecords": 1,
+                        "useSortable": 1
+                    },
+                    "foreign_field": "parentid",
+                    "foreign_sortby": "sorting",
+                    "foreign_table": "--inlinetable--",
+                    "foreign_table_field": "parenttable",
+                    "maxitems": "10",
+                    "type": "inline"
+                },
+                "fullKey": "tx_mask_menukey",
+                "key": "menukey",
+                "type": "inline"
+            }
+        }
+    },
+    "tx_mask_isoimgkey": {
+        "sql": {
+            "tx_mask_isotag": {
+                "tx_mask_isoimgkey": {
+                    "tx_mask_isotag": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_isoup": {
+                "tx_mask_isoimgkey": {
+                    "tx_mask_isoup": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_isotag": {
+                "config": {
+                    "type": "input"
+                },
+                "description": "Has to match with the buttonlabel",
+                "fullKey": "tx_mask_isotag",
+                "inlineParent": "tx_mask_isoimgkey",
+                "key": "isotag",
+                "label": "tag for image",
+                "order": 1,
+                "type": "string"
+            },
+            "tx_mask_isoup": {
+                "config": {
+                    "appearance": {
+                        "elementBrowserEnabled": 1,
+                        "enabledControls": {
+                            "delete": 1,
+                            "dragdrop": 1,
+                            "hide": 1,
+                            "info": 1,
+                            "localize": 1,
+                            "sort": 0
+                        },
+                        "fileUploadAllowed": 1,
+                        "useSortable": 1
+                    },
+                    "foreign_table": "sys_file_reference",
+                    "type": "inline"
+                },
+                "description": "Image in the gallery",
+                "fullKey": "tx_mask_isoup",
+                "imageoverlayPalette": 1,
+                "inlineParent": "tx_mask_isoimgkey",
+                "key": "isoup",
+                "label": "Image",
+                "order": 2,
+                "type": "file"
+            }
+        }
+    },
+    "tx_mask_menukey": {
+        "sql": {
+            "tx_mask_buttonkey": {
+                "tx_mask_menukey": {
+                    "tx_mask_buttonkey": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_isobuttontag": {
+                "tx_mask_menukey": {
+                    "tx_mask_isobuttontag": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_buttonkey": {
+                "config": {
+                    "type": "input"
+                },
+                "fullKey": "tx_mask_buttonkey",
+                "inlineParent": "tx_mask_menukey",
+                "key": "buttonkey",
+                "label": "buttontext",
+                "order": 1,
+                "type": "string"
+            },
+            "tx_mask_isobuttontag": {
+                "config": {
+                    "type": "input"
+                },
+                "description": "Has to match some isotag * shows all elements",
+                "fullKey": "tx_mask_isobuttontag",
+                "inlineParent": "tx_mask_menukey",
+                "key": "isobuttontag",
+                "label": "Tag",
+                "order": 2,
+                "type": "string"
+            }
+        }
+    },
+    "mask_export": {
+        "elements": {
+            "configuration": {
+                "key": "configuration",
+                "label": "altaahisogal",
+                "shortLabel": "Altaah",
+                "columns": [
+                    "isotestkey"
+                ]
+            }
+        }
+    }
+}

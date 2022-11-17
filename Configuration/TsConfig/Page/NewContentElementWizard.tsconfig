@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+            isotestkey {
+                iconIdentifier = tx_altaahisogal_isotestkey
+                title = LLL:EXT:altaahisogal/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.isotestkey_title
+                description = LLL:EXT:altaahisogal/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.isotestkey_description
+                tt_content_defValues {
+                    CType = altaahisogal_isotestkey
+                }
+            }
+    }
+    show := addToList(isotestkey)
+}

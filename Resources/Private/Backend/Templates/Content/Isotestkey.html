@@ -1,0 +1,20 @@
+<f:if condition="{processedRow.tx_altaahisogal_menukey}">
+    <strong><f:translate key="LLL:EXT:altaahisogal/Resources/Private/Language/locallang_db.xlf:tt_content.tx_altaahisogal_menukey" /></strong>
+<br><f:for each="{processedRow.tx_altaahisogal_menukey}" as="item">
+    <ul>
+        <li>
+            <f:translate key="LLL:EXT:altaahisogal/Resources/Private/Language/locallang_db.xlf:tx_altaahisogal_menukey.tx_altaahisogal_buttonkey" /> {item.tx_altaahisogal_buttonkey} (id={item.uid})<br/>
+        </li>
+    </ul>
+</f:for>
+</f:if>
+<f:if condition="{processedRow.tx_altaahisogal_isoimgkey}">
+    <strong><f:translate key="LLL:EXT:altaahisogal/Resources/Private/Language/locallang_db.xlf:tt_content.tx_altaahisogal_isoimgkey" /></strong>
+<br><f:for each="{processedRow.tx_altaahisogal_isoimgkey}" as="item">
+    <ul>
+        <li>
+            <f:translate key="LLL:EXT:altaahisogal/Resources/Private/Language/locallang_db.xlf:tx_altaahisogal_isoimgkey.tx_altaahisogal_isotag" /> {item.tx_altaahisogal_isotag} (id={item.uid})<br/>
+        </li>
+    </ul>
+</f:for>
+</f:if>

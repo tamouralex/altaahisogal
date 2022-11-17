@@ -1,0 +1,20 @@
+# cat=altaahisogal/file; type=string; label=Path to template root (FE)
+plugin.tx_altaahisogal.view.templateRootPath =
+
+# cat=altaahisogal/file; type=string; label=Path to template partials (FE)
+plugin.tx_altaahisogal.view.partialRootPath = EXT:altaah1package/Resources/Private/Partials/ContentElements/
+
+# cat=altaahisogal/file; type=string; label=Path to template layouts (FE)
+plugin.tx_altaahisogal.view.layoutRootPath = EXT:altaah1package/Resources/Private/Layouts/ContentElements/
+
+
+# cat=altaahisogal/file; type=boolean; label=Include Jquery.js
+incjq = 
+
+# cat=altaahisogal/file; type=boolean; label=Include magnific-popup.js
+incmagnificjs = 
+
+# cat=altaahisogal/file; type=boolean; label=Include magnific-popup.css
+incmagnificcss = 
+
+

@@ -1,0 +1,129 @@
+
+
+/* .container{
+	width:90%
+	margin:10px auto;
+} */
+.mfp-image-holder .mfp-content {
+  max-width: 89vh;
+}
+
+
+.portfolio-menu {
+    text-align: center;
+}
+
+.portfolio-menu ul li {
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    -webkit-transition: all 05s ease;
+    -moz-transition: all 05s ease;
+    -ms-transition: all 05s ease;
+    -o-transition: all 05s ease;
+    transition: all .5s ease;
+}
+
+.portfolio-item {
+    /*width:100%;*/
+}
+
+.portfolio-item .item {
+    /*width:303px;*/
+    float: left;
+    margin-bottom: 10px;
+}
+
+
+
+.isocont {
+  position: relative;
+}
+
+.isoimage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.isooverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.isocont:hover .isooverlay {
+  opacity: 0.9;
+}
+
+.isotext {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.isobtn-outline-dark {
+  color: #212529;
+  border-color: #212529;
+  background-color: lightslategray;
+}
+
+.isobtn-outline-dark.active, .isobtn-outline-dark.dropdown-toggle.show {
+  color: #fff;
+  background-color: #212529;
+  border-color: #212529;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

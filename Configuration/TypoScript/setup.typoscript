@@ -1,0 +1,79 @@
+tt_content.altaahisogal_isotestkey = FLUIDTEMPLATE
+tt_content.altaahisogal_isotestkey {
+    layoutRootPaths.0 = EXT:altaahisogal/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_altaahisogal.view.layoutRootPath}
+    partialRootPaths.0 = EXT:altaahisogal/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_altaahisogal.view.partialRootPath}
+    templateRootPaths.0 = EXT:altaahisogal/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_altaahisogal.view.templateRootPath}
+    templateName = Isotestkey
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+        if.isTrue.field = tx_altaahisogal_menukey
+        table = tx_altaahisogal_menukey
+        pidInList.field = pid
+        where = parentid=###uid### AND deleted=0 AND hidden=0
+        orderBy = sorting
+        markers.uid.field = uid
+        as = data_tx_altaahisogal_menukey
+    }
+    dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.20 {
+        if.isTrue.field = tx_altaahisogal_isoimgkey
+        table = tx_altaahisogal_isoimgkey
+        pidInList.field = pid
+        where = parentid=###uid### AND deleted=0 AND hidden=0
+        orderBy = sorting
+        markers.uid.field = uid
+        as = data_tx_altaahisogal_isoimgkey
+    }
+    dataProcessing.20 {
+        dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        dataProcessing.10 {
+        if.isTrue.field = tx_altaahisogal_isoup
+        references {
+            fieldName = tx_altaahisogal_isoup
+            table = tx_altaahisogal_isoimgkey
+        }
+        as = data_tx_altaahisogal_isoup
+    }
+
+}
+}
+
+##################
+#### INCLUDES ####
+##################
+
+page {
+
+
+    includeCSS {
+        magnifici = EXT:altaahisogal/Resources/Public/Css/magnific-popup.css
+        magnifici.if.equals = 1
+        magnifici.if.value = {$incmagnificcss}
+        isocustomcss = EXT:altaahisogal/Resources/Public/Css/iso.css
+
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+        jqueryi = EXT:altaahisogal/Resources/Public/JavaScript/jquery.min.js
+        jqueryi.if.equals = 1
+        jqueryi.if.value = {$incjq} 
+        iso =  EXT:altaahisogal/Resources/Public/JavaScript/iso.js
+        magjsi =EXT:altaahisogal/Resources/Public/JavaScript/jquery.magnific-popup.js
+        magjsi.if.equals = 1
+        magjsi.if.value = {$incmagnificjs}       
+ 
+    }
+
+}
+tt_content.altaahisogal_isotestkey {
+    settings {
+        defaultHeaderType = 2
+        }
+}
